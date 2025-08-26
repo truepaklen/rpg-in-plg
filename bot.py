@@ -6,6 +6,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Привет! Я бот.")
 
 # Создание и запуск бота
-app = ApplicationBuilder().token("ТВОЙ_ТОКЕН").build()
+from config import BOT_TOKEN
+app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.run_polling()
