@@ -1,7 +1,9 @@
 services:
   - type: web
     name: rpg-in-plg
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python bot.py"
-    pythonVersion: 3.10
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
