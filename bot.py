@@ -1,14 +1,12 @@
-import os
-print("📁 FILES IN DIR:", os.listdir())
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-from telegram import Update
-
-# Обработчик команды /start
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Привет! Я бот.")
-
-# Создание и запуск бота
+from telegram.ext import Updater, CommandHandler
 from config import BOT_TOKEN
-app = ApplicationBuilder().token(BOT_TOKEN).build()
-app.add_handler(CommandHandler("start", start))
-app.run_polling()
+
+def start(update, context):
+    update.message.reply_text("Привет! Я бот.")
+
+updater = Updater(token=BOT_TOKEN, use_context=True)
+dispatcher = updater.dispatcher
+dispatcher.add_handler(CommandHandler("start", start))
+
+updater.start_polling()
+updater.idle()
