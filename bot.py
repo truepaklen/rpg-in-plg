@@ -1,3 +1,5 @@
+import sys
+print("✅ Python version:", sys.version)
 from telegram.ext import Updater, CommandHandler
 from config import BOT_TOKEN
 
