@@ -1,3 +1,4 @@
+print("=== BOT.PY IS LOADED ===")
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from telegram import Update
 
