@@ -1,4 +1,5 @@
-print("=== BOT.PY IS LOADED ===")
+import os
+print("📁 FILES IN DIR:", os.listdir())
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from telegram import Update
 
